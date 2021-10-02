@@ -58,7 +58,6 @@ loaded_network.compile(optimizer='adam',
 # TAKING INPUT FROM USER
 
 with st.form(key='my_form'):
-	text_input = st.text_input(label='Enter some text')
 	Pregnancies = st.text_input(label="Number of Pregnancies")
 	Glucose = st.text_input(label="Glucose levels")
 	BloodPressure = st.text_input(label="Blood Pressure levels")
@@ -68,38 +67,12 @@ with st.form(key='my_form'):
 	DiabetesPedigreeFunction = st.text_input(label="Diabetes Pedigree Function")
 	Age = st.text_input(label="Age of the patient")
 	submit_button = st.form_submit_button(label='Submit')
-		
-
-
-df1 = pd.DataFrame(
-    data=[[Pregnancies,
-    Glucose,
-    BloodPressure,
-    SkinThickness,
-    Insulin,
-    BMI,
-    DiabetesPedigreeFunction,
-    Age]],
-    columns=['Pregnancies', 
-    'Glucose', 
-    'BloodPressure', 
-    'SkinThickness', 
-    'Insulin', 
-    'BMI', 
-    'DiabetesPedigreeFunction', 
-    'Age'])
+	
+z = [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]]
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # MAKING PREDICTION
-z = [[Pregnancies,
-    Glucose,
-    BloodPressure,
-    SkinThickness,
-    Insulin,
-    BMI,
-    DiabetesPedigreeFunction,
-    Age]]
 if submit_button:
 	lst1 = []
 	for i in model_lst:
