@@ -35,14 +35,14 @@ RFC1 = pickle.load(open('Random Forest Classifier (Hyperparameter tuned).pkl', '
 SGDC1 = pickle.load(open('Stochastic Gradient Descent (Hyperparameter tuned).pkl', 'rb'))
 svm = pickle.load(open('Support Vector Machine.pkl', 'rb'))
 L_SVC = pickle.load(open('Linear Support Vector Machine (Hyperparameter tuned).pkl', 'rb')) 
-GNB = pickle.load(open('Naive Bayes.pkl', 'rb'))
+# GNB = pickle.load(open('Naive Bayes.pkl', 'rb'))
 BNB = pickle.load(open('Bernoulli Naive Bayes.pkl', 'rb'))
 MNB1 = pickle.load(open('Multinomial Naive Bayes (Hyperparameter tuned).pkl', 'rb'))
 AdaB1 = pickle.load(open('AdaBoost Classifier (Hyperparameter tuned).pkl', 'rb'))
 LGBM = pickle.load(open('Light Gradient Boosting Machine.pkl', 'rb'))
 GBC1 = pickle.load(open('Gradient Boosting Classifier (Hyperparameter tuned).pkl', 'rb'))
 
-model_lst = [LogReg, RFC1, SGDC1, svm, L_SVC, GNB, BNB, MNB1, AdaB1, LGBM, GBC1]
+model_lst = [LogReg, RFC1, SGDC1, svm, L_SVC, BNB, MNB1, AdaB1, LGBM, GBC1]
 
 json_file = open('network.json', 'r')
 loaded_network_json = json_file.read()
