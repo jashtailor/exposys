@@ -55,6 +55,23 @@ loaded_network.compile(optimizer='adam',
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# MAKING PREDICTION
+def making_prediction():
+	lst1 = []
+	for i in model_lst:
+	    lst1.append(i.predict(df1))
+	st.write(model_lst)
+	m = network.predict(df1)
+	lst1.append(np.where(m[0] == max(m[0])))
+	st.write(model_lst)
+	if lst1.count(1)>lst1.count(0):
+	    st.write('Patient is likely to be diagnosed with Diabetes')
+	else:
+	    st.write('Patient is unlikely to be diagnosed with Diabetes')
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # TAKING INPUT FROM USER
 
 with st.form(key='my_form'):
@@ -67,7 +84,9 @@ with st.form(key='my_form'):
 	BMI = st.text_input(label="BMI of the patient")
 	DiabetesPedigreeFunction = st.text_input(label="Diabetes Pedigree Function")
 	Age = st.text_input(label="Age of the patient")
-	submit_button = st.form_submit_button(label='Submit')
+	def button():
+		submit_button = st.form_submit_button(label='Submit')
+		making_prediction()
 
 
 df1 = pd.DataFrame(
@@ -89,18 +108,4 @@ df1 = pd.DataFrame(
     'Age'])
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# MAKING PREDICTION
-lst1 = []
-for i in model_lst:
-    lst1.append(i.predict(df1))
-st.write(model_lst)
-m = network.predict(df1)
-lst1.append(np.where(m[0] == max(m[0])))
-st.write(model_lst)
-if lst1.count(1)>lst1.count(0):
-    st.write('Patient is likely to be diagnosed with Diabetes')
-else:
-    st.write('Patient is unlikely to be diagnosed with Diabetes')
-# --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
