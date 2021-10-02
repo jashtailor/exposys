@@ -85,7 +85,7 @@ with st.form(key='my_form'):
 	DiabetesPedigreeFunction = st.text_input(label="Diabetes Pedigree Function")
 	Age = st.text_input(label="Age of the patient")
 	def button():
-		submit_button = st.form_submit_button(label='Submit')
+		submit_button = st.form_submit_button()(label='Submit')
 		making_prediction()
 
 
