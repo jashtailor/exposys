@@ -47,6 +47,12 @@ model_lst = [LogReg, RFC1, SGDC1, svm, L_SVC, BNB, MNB1, AdaB1, LGBM, GBC1]
 json_file = open('network.json', 'r')
 loaded_network_json = json_file.read()
 json_file.close()
+loaded_network = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(1, 8)),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(2, activation='sigmoid')
+])
 loaded_network = model_from_json(loaded_network_json)
 loaded_network.load_weights("network.h5")
 loaded_network.compile(optimizer='adam',
