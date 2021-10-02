@@ -49,6 +49,9 @@ loaded_network_json = json_file.read()
 json_file.close()
 loaded_network = model_from_json(loaded_network_json)
 loaded_network.load_weights("network.h5")
+loaded_network.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
