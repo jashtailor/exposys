@@ -84,9 +84,8 @@ with st.form(key='my_form'):
 	BMI = st.text_input(label="BMI of the patient")
 	DiabetesPedigreeFunction = st.text_input(label="Diabetes Pedigree Function")
 	Age = st.text_input(label="Age of the patient")
-	def button():
-		submit_button = st.form_submit_button()(label='Submit')
-		making_prediction()
+	submit_button = st.form_submit_button()(label='Submit')
+		
 
 
 df1 = pd.DataFrame(
