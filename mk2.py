@@ -94,8 +94,10 @@ df1 = pd.DataFrame(
 lst1 = []
 for i in model_lst:
     lst1.append(i.predict(df1))
+st.write(model_lst)
 m = network.predict(df1)
 lst1.append(np.where(m[0] == max(m[0])))
+st.write(model_lst)
 if lst1.count(1)>lst1.count(0):
     st.write('Patient is likely to be diagnosed with Diabetes')
 else:
