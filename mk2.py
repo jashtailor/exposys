@@ -92,12 +92,13 @@ df1 = pd.DataFrame(
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # MAKING PREDICTION
+z = df1
 if submit_button:
 	lst1 = []
 	for i in model_lst:
-	    lst1.append(i.predict(df1))
+	    lst1.append(i.predict(z))
 	st.write(model_lst)
-	m = network.predict(df1)
+	m = network.predict(z)
 	lst1.append(np.where(m[0] == max(m[0])))
 	st.write(model_lst)
 	if lst1.count(1)>lst1.count(0):
