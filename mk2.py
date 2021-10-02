@@ -92,7 +92,14 @@ df1 = pd.DataFrame(
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # MAKING PREDICTION
-z = df1
+z = [[Pregnancies,
+    Glucose,
+    BloodPressure,
+    SkinThickness,
+    Insulin,
+    BMI,
+    DiabetesPedigreeFunction,
+    Age]]
 if submit_button:
 	lst1 = []
 	for i in model_lst:
