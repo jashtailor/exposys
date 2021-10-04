@@ -64,14 +64,14 @@ loaded_network.compile(optimizer='adam',
 # TAKING INPUT FROM USER
 
 with st.form(key='my_form'):
-	Pregnancies = st.text_input(label="Number of Pregnancies")
-	Glucose = st.text_input(label="Glucose levels")
-	BloodPressure = st.text_input(label="Blood Pressure levels")
-	SkinThickness = st.text_input(label="Skin Thickness")
-	Insulin = st.text_input(label="Insulin levels")
-	BMI = st.text_input(label="BMI of the patient")
-	DiabetesPedigreeFunction = st.text_input(label="Diabetes Pedigree Function")
-	Age = st.text_input(label="Age of the patient")
+	Pregnancies = st.number_input(label="Number of Pregnancies")
+	Glucose = st.number_input(label="Glucose levels")
+	BloodPressure = st.number_input(label="Blood Pressure levels")
+	SkinThickness = st.number_input(label="Skin Thickness")
+	Insulin = st.number_input(label="Insulin levels")
+	BMI = st.number_input(label="BMI of the patient")
+	DiabetesPedigreeFunction = st.number_input(label="Diabetes Pedigree Function")
+	Age = st.number_input(label="Age of the patient")
 	submit_button = st.form_submit_button(label='Submit')
 	
 z = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
