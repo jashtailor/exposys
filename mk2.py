@@ -74,7 +74,7 @@ with st.form(key='my_form'):
 	Age = st.text_input(label="Age of the patient")
 	submit_button = st.form_submit_button(label='Submit')
 	
-z = [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]]
+z = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,8 +84,8 @@ if submit_button:
 	for i in model_lst:
 	    lst1.append(i.predict(z))
 	#st.write(model_lst)
-	#m = loaded_network.predict(z)
-	#lst1.append(np.where(m[0] == max(m[0])))
+	m = loaded_network.predict(z)
+	lst1.append(np.where(m[0] == max(m[0])))
 	#st.write(model_lst)
 	if lst1.count(1)>lst1.count(0):
 	    st.write('Patient is likely to be diagnosed with Diabetes')
